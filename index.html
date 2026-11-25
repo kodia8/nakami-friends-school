@@ -1,0 +1,306 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to Nakami Friends Senior School. Discover our academic programmes, admissions and school community.">
+    <title>NAKAMI FRIENDS SENIOUR SCHOOL | Excellence in Education</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="header">
+    <a href="#home" class="brand">
+        <div class="logo">NF</div>
+        <div>
+            <h2>NAKAMI FRIENDS</h2>
+            <span>SENIOUR SCHOOL</span>
+        </div>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
+
+    <nav id="navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#academics">Academics</a>
+        <a href="#admissions">Admissions</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#portal" class="nav-button">Student Portal</a>
+    </nav>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+    <div class="hero-content">
+        <span class="welcome">WELCOME TO NAKAMI FRIENDS SENIOUR SCHOOL</span>
+        <h1>Inspiring Minds.<br>Building Futures.</h1>
+        <p>
+            A community of learning, character and excellence.
+            Discover an environment where every learner is encouraged
+            to grow, achieve and prepare for tomorrow.
+        </p>
+        <div class="hero-buttons">
+            <a href="#admissions" class="btn primary">Apply for Admission →</a>
+            <a href="#about" class="btn outline">Discover Our School</a>
+        </div>
+    </div>
+</section>
+
+<section class="quick-info">
+    <div>
+        <span>01</span>
+        <h3>Academic Excellence</h3>
+        <p>Supporting learners to achieve their potential.</p>
+    </div>
+    <div>
+        <span>02</span>
+        <h3>Holistic Development</h3>
+        <p>Building knowledge, talents and character.</p>
+    </div>
+    <div>
+        <span>03</span>
+        <h3>Future Leadership</h3>
+        <p>Preparing responsible citizens and leaders.</p>
+    </div>
+</section>
+
+<section class="section" id="about">
+    <div class="section-heading">
+        <span>GET TO KNOW US</span>
+        <h2>About Our School</h2>
+        <p>Education that inspires growth and creates opportunities.</p>
+    </div>
+
+    <div class="about-content">
+        <div class="image-placeholder">
+            <span>NAKAMI FRIENDS</span>
+            <h2>A Place to Learn, Grow and Excel</h2>
+        </div>
+
+        <div class="about-text">
+            <h3>Welcome to Nakami Friends Senior School</h3>
+            <p>
+                We are committed to providing a supportive learning
+                environment where students develop academically,
+                socially and personally.
+            </p>
+            <p>
+                Our school aims to nurture discipline, creativity,
+                confidence, leadership and lifelong learning.
+            </p>
+            <a href="#academics" class="text-link">Explore Our Programmes →</a>
+        </div>
+    </div>
+</section>
+
+<section class="section light-section" id="academics">
+    <div class="section-heading">
+        <span>LEARNING AND DEVELOPMENT</span>
+        <h2>Our Academic Programmes</h2>
+        <p>Learning opportunities designed to develop knowledge, skills and talents.</p>
+    </div>
+
+    <div class="card-grid">
+        <article class="academic-card">
+            <div class="card-icon">📚</div>
+            <h3>STEM Pathway</h3>
+            <p>Science, technology, engineering and mathematics learning opportunities.</p>
+        </article>
+
+        <article class="academic-card">
+            <div class="card-icon">🎨</div>
+            <h3>Arts and Sports Science</h3>
+            <p>Creative expression, artistic development and sporting excellence.</p>
+        </article>
+
+        <article class="academic-card">
+            <div class="card-icon">🌍</div>
+            <h3>Social Sciences</h3>
+            <p>Developing communication, social awareness and critical thinking.</p>
+        </article>
+
+        <article class="academic-card">
+            <div class="card-icon">💻</div>
+            <h3>Digital Learning</h3>
+            <p>Building digital literacy and technology skills for the modern world.</p>
+        </article>
+
+        <article class="academic-card">
+            <div class="card-icon">⚽</div>
+            <h3>Sports and Talent</h3>
+            <p>Encouraging teamwork, physical development and individual talents.</p>
+        </article>
+
+        <article class="academic-card">
+            <div class="card-icon">🏆</div>
+            <h3>Leadership and Values</h3>
+            <p>Nurturing discipline, responsibility and positive citizenship.</p>
+        </article>
+    </div>
+</section>
+
+<section class="section" id="admissions">
+    <div class="section-heading">
+        <span>JOIN OUR SCHOOL</span>
+        <h2>Admissions</h2>
+        <p>Take the first step towards a brighter educational future.</p>
+    </div>
+
+    <div class="admission-box">
+        <div>
+            <h3>Become Part of Our School Community</h3>
+            <p>Contact the school for admission requirements, available places and application guidance.</p>
+        </div>
+        <a href="#application" class="btn primary">Start Application →</a>
+    </div>
+
+    <div class="form-container" id="application">
+        <h3>Online Admission Enquiry</h3>
+        <form id="applicationForm">
+            <label for="studentName">Student's Full Name</label>
+            <input type="text" id="studentName" name="studentName" placeholder="Enter student's full name" required>
+
+            <label for="guardian">Parent / Guardian Name</label>
+            <input type="text" id="guardian" name="guardian" placeholder="Enter parent or guardian name" required>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter contact number" required>
+
+            <label for="grade">Class / Grade Applying For</label>
+            <select id="grade" name="grade" required>
+                <option value="">Select grade</option>
+                <option>Grade 10</option>
+                <option>Grade 11</option>
+                <option>Grade 12</option>
+            </select>
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Enter email address">
+
+            <button type="submit" class="btn primary full-btn">Submit Enquiry →</button>
+            <p id="applicationMessage" class="form-message" role="status"></p>
+        </form>
+        <p class="notice">This is an application enquiry form. It does not yet transmit or store applications.</p>
+    </div>
+</section>
+
+<section class="section light-section" id="news">
+    <div class="section-heading">
+        <span>WHAT'S HAPPENING</span>
+        <h2>News and Announcements</h2>
+        <p>Stay connected with school activities and important updates.</p>
+    </div>
+
+    <div class="card-grid">
+        <article class="news-card">
+            <span class="news-tag">ANNOUNCEMENTS</span>
+            <h3>School Announcements</h3>
+            <p>Important notices and updates from the school administration will appear here.</p>
+            <small>Official school updates</small>
+        </article>
+
+        <article class="news-card">
+            <span class="news-tag">ADMISSIONS</span>
+            <h3>Admission Updates</h3>
+            <p>Information about admission opportunities and application procedures.</p>
+            <small>Admissions office</small>
+        </article>
+
+        <article class="news-card">
+            <span class="news-tag">SCHOOL EVENTS</span>
+            <h3>School Activities</h3>
+            <p>Updates about educational activities, sports and school events.</p>
+            <small>School community</small>
+        </article>
+    </div>
+    <p class="notice">Official announcements will be added by the school administration.</p>
+</section>
+
+<section class="section portal-section" id="portal">
+    <div class="section-heading">
+        <span>DIGITAL SCHOOL SERVICES</span>
+        <h2>Student Portal</h2>
+        <p>Access student services through our planned digital platform.</p>
+    </div>
+
+    <div class="portal-box">
+        <div class="portal-icon">🎓</div>
+        <h3>Welcome to the Student Portal</h3>
+        <p>
+            The student portal will provide access to academic information,
+            results, notices and other student services.
+        </p>
+        <p class="notice">Student login services are currently being prepared.</p>
+    </div>
+</section>
+
+<section class="section light-section" id="fees">
+    <div class="section-heading">
+        <span>STUDENT FINANCIAL INFORMATION</span>
+        <h2>School Fees and Payments</h2>
+        <p>Access information about school fees and payment procedures.</p>
+    </div>
+
+    <div class="fees-box">
+        <div class="fees-icon">🏦</div>
+        <h3>Fees Information</h3>
+        <p>
+            Parents and guardians can contact the school administration
+            for the official fee structure, payment methods and deadlines.
+        </p>
+        <p class="notice">Official payment details will be published after verification by the school.</p>
+    </div>
+</section>
+
+<section class="section" id="contact">
+    <div class="section-heading">
+        <span>WE WOULD LOVE TO HEAR FROM YOU</span>
+        <h2>Contact Our School</h2>
+        <p>Reach out to us for admissions and general enquiries.</p>
+    </div>
+
+    <div class="contact-grid">
+        <div>
+            <h3>Get in Touch</h3>
+            <p>📍 School Location: To be updated</p>
+            <p>📞 Phone: To be updated</p>
+            <p>✉️ Email: To be updated</p>
+        </div>
+        <div>
+            <h3>School Administration</h3>
+            <p>For admission enquiries, school information and other assistance, contact the school office.</p>
+            <a href="#application" class="btn primary">Make an Enquiry</a>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<footer class="footer">
+    <div class="footer-brand">NAKAMI FRIENDS SENIOUR SCHOOL</div>
+    <p>Inspiring Minds. Building Futures.</p>
+
+    <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#academics">Academics</a>
+        <a href="#admissions">Admissions</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <p class="copyright">
+        © <span id="year"></span> Nakami Friends Senior School.
+        All rights reserved.
+    </p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
