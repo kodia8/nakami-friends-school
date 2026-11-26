@@ -1,0 +1,333 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#092b52">
+    <title>School Portal Login | NAKAMI FRIENDS SENIOUR SCHOOL</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #061d38, #1268b3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 25px;
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 470px;
+            background: white;
+            border-radius: 16px;
+            padding: 38px;
+            box-shadow: 0 20px 60px rgba(0,0,0,.25);
+        }
+
+        .login-brand {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .login-brand h1 {
+            color: #092b52;
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+        }
+
+        .login-brand p {
+            color: #6b7c91;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        .login-icon {
+            width: 65px;
+            height: 65px;
+            background: #092b52;
+            color: #e8b94f;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            font-size: 27px;
+            margin: 0 auto 15px;
+        }
+
+        .login-container h2 {
+            text-align: center;
+            color: #092b52;
+            margin-bottom: 8px;
+            font-size: 23px;
+        }
+
+        .login-description {
+            text-align: center;
+            color: #6b7c91;
+            font-size: 13px;
+            margin-bottom: 25px;
+        }
+
+        .role-select {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 23px;
+        }
+
+        .role-option {
+            border: 1px solid #dce5ef;
+            padding: 13px 8px;
+            border-radius: 7px;
+            text-align: center;
+            cursor: pointer;
+            color: #092b52;
+            font-size: 12px;
+            font-weight: 800;
+            background: #f7faff;
+        }
+
+        .role-option.selected {
+            background: #092b52;
+            color: white;
+            border-color: #e8b94f;
+        }
+
+        .login-field {
+            margin-bottom: 17px;
+        }
+
+        .login-field label {
+            display: block;
+            color: #092b52;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 7px;
+        }
+
+        .login-field input {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #dce5ef;
+            border-radius: 6px;
+            outline: none;
+        }
+
+        .login-field input:focus {
+            border-color: #1268b3;
+        }
+
+        .password-wrapper {
+            position: relative;
+        }
+
+        .password-wrapper input {
+            padding-right: 65px;
+        }
+
+        .show-password {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 0;
+            background: transparent;
+            color: #1268b3;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .forgot-link {
+            display: block;
+            text-align: right;
+            color: #1268b3;
+            font-size: 12px;
+            font-weight: 700;
+            margin: -5px 0 20px;
+        }
+
+        .login-button {
+            width: 100%;
+            padding: 15px;
+            background: #092b52;
+            color: white;
+            border: 0;
+            border-radius: 6px;
+            font-weight: 800;
+            cursor: pointer;
+        }
+
+        .login-button:hover {
+            background: #1268b3;
+        }
+
+        .login-message {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 13px;
+            color: #c0392b;
+        }
+
+        .back-home {
+            display: block;
+            text-align: center;
+            color: #1268b3;
+            font-size: 13px;
+            font-weight: 700;
+            margin-top: 22px;
+        }
+
+        .security-note {
+            text-align: center;
+            color: #8997a8;
+            font-size: 11px;
+            margin-top: 20px;
+        }
+
+        @media(max-width: 480px) {
+            .login-container {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="login-container">
+
+        <div class="login-brand">
+            <div class="login-icon">NFS</div>
+            <h1>NAKAMI FRIENDS</h1>
+            <p>SENIOUR SCHOOL • OFFICIAL PORTAL</p>
+        </div>
+
+        <h2>Welcome Back</h2>
+        <p class="login-description">
+            Select your department and sign in to continue.
+        </p>
+
+        <div class="role-select">
+            <button type="button" class="role-option" data-role="ADMIN">ADMIN</button>
+            <button type="button" class="role-option" data-role="ACADEMIC">ACADEMIC</button>
+            <button type="button" class="role-option" data-role="IT">IT</button>
+            <button type="button" class="role-option" data-role="STAFF">STAFF</button>
+        </div>
+
+        <form id="loginForm">
+
+            <div class="login-field">
+                <label for="username">Username or Email</label>
+                <input
+                    type="text"
+                    id="username"
+                    placeholder="Enter username or email"
+                    autocomplete="username"
+                    required
+                >
+            </div>
+
+            <div class="login-field">
+                <label for="password">Password</label>
+
+                <div class="password-wrapper">
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter your password"
+                        autocomplete="current-password"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        class="show-password"
+                        id="togglePassword"
+                    >
+                        Show
+                    </button>
+                </div>
+            </div>
+
+            <a href="forgot-password.html" class="forgot-link">
+                Forgot Password?
+            </a>
+
+            <button type="submit" class="login-button">
+                SIGN IN
+            </button>
+
+            <p id="loginMessage" class="login-message" role="status"></p>
+
+        </form>
+
+        <a href="index.html" class="back-home">
+            ← Back to School Website
+        </a>
+
+        <p class="security-note">
+            Secure School Management Portal
+        </p>
+
+    </main>
+
+    <script>
+        let selectedRole = "";
+
+        const roleButtons = document.querySelectorAll(".role-option");
+
+        roleButtons.forEach(function(button) {
+
+            button.addEventListener("click", function() {
+
+                roleButtons.forEach(function(item) {
+                    item.classList.remove("selected");
+                });
+
+                button.classList.add("selected");
+                selectedRole = button.dataset.role;
+
+                document.getElementById("loginMessage").textContent = "";
+
+            });
+
+        });
+
+        const passwordInput = document.getElementById("password");
+        const togglePassword = document.getElementById("togglePassword");
+
+        togglePassword.addEventListener("click", function() {
+
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                togglePassword.textContent = "Hide";
+            } else {
+                passwordInput.type = "password";
+                togglePassword.textContent = "Show";
+            }
+
+        });
+
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            const message = document.getElementById("loginMessage");
+
+            if (!selectedRole) {
+                message.textContent = "Please select your department first.";
+                return;
+            }
+
+            message.textContent =
+                "Login is not connected yet. We will activate secure authentication in the next setup step.";
+
+        });
+    </script>
+
+</body>
+</html>
