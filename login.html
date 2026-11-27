@@ -1,7 +1,54 @@
-<!-- Put this at the bottom of your login page, before </body> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login - Nakami Friends School</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+  body{background:#0f3d2e;display:flex;align-items:center;justify-content:center;min-height:100vh;padding:15px}
+  .box{background:white;width:100%;max-width:400px;padding:25px;border-radius:15px;box-shadow:0 10px 30px rgba(0,0,0,0.3)}
+  .box h1{text-align:center;color:#0f3d2e;font-size:24px;margin-bottom:5px}
+  .box p{text-align:center;color:#666;font-size:14px;margin-bottom:20px}
+  label{font-size:14px;font-weight:bold;color:#333;display:block;margin:12px 0 5px}
+  input{width:100%;padding:12px;border:1px solid #ccc;border-radius:8px;font-size:15px}
+  button{width:100%;padding:13px;background:#0f3d2e;color:white;border:none;border-radius:8px;font-size:16px;font-weight:bold;margin-top:18px;cursor:pointer}
+  button:hover{background:#14573f}
+  .link{text-align:center;margin-top:15px;font-size:14px;color:#0f3d2e;cursor:pointer;text-decoration:underline}
+  #msg{text-align:center;margin-top:12px;font-size:14px;color:red;min-height:18px}
+  .back{text-align:center;display:block;margin-top:15px;color:#666;font-size:13px;text-decoration:none}
+</style>
+</head>
+<body>
+
+<div class="box">
+  <h1>Nakami Friends School</h1>
+  <p id="formTitle">Login to your account</p>
+
+  <label>Email</label>
+  <input type="email" id="loginEmail" placeholder="Enter your email">
+
+  <label>Password</label>
+  <input type="password" id="loginPassword" placeholder="Enter password">
+
+  <!-- Signup fields - hidden for login -->
+  <div id="signupArea" style="display:none">
+    <label>Full Name</label>
+    <input type="text" id="signupName" placeholder="Enter full name">
+  </div>
+
+  <button id="loginBtn">LOGIN</button>
+  <button id="signupBtn" style="display:none;background:#e67e22">CREATE ACCOUNT</button>
+
+  <div id="msg"></div>
+
+  <div class="link" id="toggleLink">Don't have account? Create one</div>
+  <a class="back" href="/index.html">← Back to Home</a>
+</div>
+
 <script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/13.4.0/firebase-app.js";
-  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/13.4.0/firebase-auth.js";
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
   const firebaseConfig = {
     apiKey: "AIzaSyC3q2TmBZlbwMMdHdDPgd_mRZk0qkzIlqA",
@@ -16,30 +63,56 @@
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
 
-  // SIGNUP - change 'signupBtn', 'signupEmail', 'signupPassword' to your real IDs
-  const signupBtn = document.getElementById('signupBtn');
-  if (signupBtn) {
-    signupBtn.addEventListener('click', async () => {
-      const email = document.getElementById('signupEmail').value;
-      const password = document.getElementById('signupPassword').value;
-      try {
-        await createUserWithEmailAndPassword(auth, email, password);
-        alert('Account created! Now login.');
-      } catch (e) { alert(e.message); }
-    });
-  }
+  const msg = document.getElementById('msg');
+  let isSignup = false;
 
-  // LOGIN - change 'loginBtn', 'loginEmail', 'loginPassword' to your real IDs
-  const loginBtn = document.getElementById('loginBtn');
-  if (loginBtn) {
-    loginBtn.addEventListener('click', async () => {
-      const email = document.getElementById('loginEmail').value;
-      const password = document.getElementById('loginPassword').value;
-      try {
-        await signInWithEmailAndPassword(auth, email, password);
-        alert('Login success!');
-        window.location.href = '/dashboard.html'; // change to your page
-      } catch (e) { alert(e.message); }
-    });
-  }
+  // Toggle Login / Signup
+  document.getElementById('toggleLink').addEventListener('click', () => {
+    isSignup = !isSignup;
+    if(isSignup){
+      document.getElementById('formTitle').textContent = 'Create new account';
+      document.getElementById('signupArea').style.display = 'block';
+      document.getElementById('loginBtn').style.display = 'none';
+      document.getElementById('signupBtn').style.display = 'block';
+      document.getElementById('toggleLink').textContent = 'Already have account? Login';
+    } else {
+      document.getElementById('formTitle').textContent = 'Login to your account';
+      document.getElementById('signupArea').style.display = 'none';
+      document.getElementById('loginBtn').style.display = 'block';
+      document.getElementById('signupBtn').style.display = 'none';
+      document.getElementById('toggleLink').textContent = "Don't have account? Create one";
+    }
+    msg.textContent = '';
+  });
+
+  // LOGIN
+  document.getElementById('loginBtn').addEventListener('click', async () => {
+    const email = document.getElementById('loginEmail').value.trim();
+    const password = document.getElementById('loginPassword').value;
+    if(!email || !password){ msg.textContent = 'Please enter email and password'; return; }
+    msg.style.color = 'green'; msg.textContent = 'Logging in...';
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      msg.textContent = 'Login success! Redirecting...';
+      window.location.href = '/dashboard.html';
+    } catch (e) { msg.style.color='red'; msg.textContent = e.message; }
+  });
+
+  // SIGNUP
+  document.getElementById('signupBtn').addEventListener('click', async () => {
+    const email = document.getElementById('loginEmail').value.trim();
+    const password = document.getElementById('loginPassword').value;
+    if(!email || !password){ msg.textContent = 'Please enter email and password'; return; }
+    if(password.length < 6){ msg.textContent = 'Password must be 6+ characters'; return; }
+    msg.style.color = 'green'; msg.textContent = 'Creating account...';
+    try {
+      await createUserWithEmailAndPassword(auth, email, password);
+      msg.textContent = 'Account created! Now login.';
+      isSignup = false;
+      document.getElementById('toggleLink').click();
+    } catch (e) { msg.style.color='red'; msg.textContent = e.message; }
+  });
 </script>
+
+</body>
+</html>
