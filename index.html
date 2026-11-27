@@ -1,189 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Official website of Nakami Friends Senior School">
-    <title>NAKAMI FRIENDS SENIOR SCHOOL</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-      .portals-section{padding:40px 15px;max-width:1000px;margin:auto}
-      .portals-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:20px}
-      .portal-card{background:white;border:1px solid #e5e5e5;border-radius:12px;padding:20px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.06)}
-      .portal-card h3{color:#0f3d2e;margin:10px 0 5px}
-      .portal-card p{color:#666;font-size:14px;margin-bottom:12px}
-      .portal-card a{display:inline-block;background:#0f3d2e;color:white;padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:700}
-      .portal-card:nth-child(2) a{background:#e67e22}
-      .portal-card:nth-child(3) a{background:#1a5fb4}
-      .portal-card:nth-child(4) a{background:#5a2d82}
-      @media(max-width:600px){.portals-grid{grid-template-columns:1fr}}
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nakami Friends School</title>
+<link rel="stylesheet" href="style.css">
+<style>
+body{font-family:Arial,sans-serif;margin:0;background:#f4f6f8}
+header{background:#0b4d2e;color:white;padding:30px 15px;text-align:center}
+nav{background:white;padding:12px;text-align:center;box-shadow:0 2px 5px rgba(0,0,0,.1)}
+nav a{margin:0 10px;color:#0b4d2e;font-weight:bold;text-decoration:none}
+.container{max-width:1000px;margin:auto;padding:20px 15px}
+.card{background:white;border-radius:16px;overflow:hidden;box-shadow:0 4px 15px rgba(0,0,0,.1);margin-top:20px}
+.card img{width:100%;display:block}
+.card-text{padding:20px;text-align:center}
+.btn{display:inline-block;background:#0b4d2e;color:white;padding:12px 22px;border-radius:8px;text-decoration:none;margin-top:10px}
+</style>
 </head>
 <body>
 
-<header class="site-header">
-    <div class="header-container">
-        <a href="#home" class="brand">
-            <div class="logo">NF</div>
-            <div>
-                <strong>NAKAMI FRIENDS</strong>
-                <span>SENIOR SCHOOL</span>
-            </div>
-        </a>
-        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
-        <nav id="navigation">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#academics">Academics</a>
-            <a href="#admissions">Admissions</a>
-            <a href="#facilities">Facilities</a>
-            <a href="#portals">Portals</a>
-            <a href="#computer-2025">2025 Students</a>
-            <a href="#contact">Contact</a>
-            <a href="login.html" class="login-link">Staff Portal</a>
-        </nav>
-    </div>
+<header>
+<h1>Nakami Friends School</h1>
+<p>Learning, Growing and Building Skills for Tomorrow</p>
+<a href="login.html" class="btn">Student Login</a>
 </header>
 
-<main>
+<nav>
+<a href="#">Home</a>
+<a href="#computer-2025">2025 Students</a>
+<a href="login.html">Login</a>
+</nav>
 
-<section class="hero" id="home">
-    <div class="hero-overlay">
-        <div class="hero-content">
-            <span class="hero-label">WELCOME TO NAKAMI FRIENDS</span>
-            <h1>Building Knowledge.<br>Inspiring Excellence.</h1>
-            <p>A community of learners, leaders and future innovators. Discover quality education and a supportive learning environment.</p>
-            <div class="hero-buttons">
-                <a href="#admissions" class="btn btn-gold">Apply for Admission</a>
-                <a href="#about" class="btn btn-outline">Discover Our School</a>
-            </div>
-        </div>
-    </div>
+<div class="container">
+
+<!-- YOUR PHOTO POST -->
+<section id="computer-2025">
+<div style="text-align:center">
+<h2>2025 Computer Students</h2>
+<p>Our proud Computer Students - Class of 2025</p>
+</div>
+
+<div class="card">
+<img src="2025 computer student.jpg" alt="2025 Computer Students">
+<div class="card-text">
+<h3>2025 Computer Students</h3>
+<p>Celebrating our hardworking computer students. Learning, growing and building skills for tomorrow.</p>
+</div>
+</div>
 </section>
 
-<section class="quick-info">
-    <div><strong>Academic Excellence</strong><span>Learning with purpose</span></div>
-    <div><strong>Student Development</strong><span>Growing future leaders</span></div>
-    <div><strong>Modern Learning</strong><span>Preparing for tomorrow</span></div>
-</section>
+<div class="card">
+<div class="card-text">
+<h3>Welcome to Nakami Friends School</h3>
+<p>We provide quality education, computer skills, and a supportive learning environment for all students.</p>
+<a href="login.html" class="btn">Go to Student Portal</a>
+</div>
+</div>
 
-<section class="section about-section" id="about">
-    <div class="section-heading">
-        <span>ABOUT OUR SCHOOL</span>
-        <h2>Welcome to Nakami Friends Senior School</h2>
-        <p>Providing an environment where every learner can discover their potential.</p>
-    </div>
-    <div class="about-content">
-        <div>
-            <h3>Our Commitment to Excellence</h3>
-            <p>Nakami Friends Senior School is committed to quality education, discipline, creativity and the development of responsible citizens.</p>
-            <p>We aim to nurture learners academically, socially and morally while preparing them for opportunities in a changing world.</p>
-            <a href="#contact" class="text-link">Get in touch →</a>
-        </div>
-        <div class="image-placeholder">
-            <img src="2025-computer-students.jpg" alt="Nakami Friends Students" style="width:100%;height:100%;object-fit:cover;border-radius:12px;display:block">
-        </div>
-    </div>
-</section>
-
-<section class="section academics-section" id="academics">
-    <div class="section-heading">
-        <span>OUR ACADEMICS</span>
-        <h2>Learning for a Better Future</h2>
-        <p>Our senior school learning structure.</p>
-    </div>
-    <div class="card-grid">
-        <article class="info-card"><div class="card-number">10</div><h3>Grade 10</h3><p>Supporting learners as they begin senior school.</p></article>
-        <article class="info-card"><div class="card-number">11</div><h3>Grade 11</h3><p>Building knowledge, skills and competencies.</p></article>
-        <article class="info-card"><div class="card-number">12</div><h3>Grade 12</h3><p>Preparing learners for future opportunities.</p></article>
-    </div>
-</section>
-
-<!-- 4 PORTALS -->
-<section class="portals-section" id="portals">
-    <div class="section-heading" style="text-align:center">
-        <span>STAFF PORTALS</span>
-        <h2>Choose Your Dashboard</h2>
-        <p>Login to access your portal.</p>
-    </div>
-    <div class="portals-grid">
-        <div class="portal-card"><div style="font-size:30px">🛡️</div><h3>Admin Dashboard</h3><p>Manage school, users & settings</p><a href="login.html?role=admin">Open Admin</a></div>
-        <div class="portal-card"><div style="font-size:30px">💻</div><h3>IT Dashboard</h3><p>Manage system, website & accounts</p><a href="login.html?role=it">Open IT</a></div>
-        <div class="portal-card"><div style="font-size:30px">📚</div><h3>Academic Dashboard</h3><p>Exams, results, classes & timetable</p><a href="login.html?role=academic">Open Academic</a></div>
-        <div class="portal-card"><div style="font-size:30px">👩‍🏫</div><h3>Staff Dashboard</h3><p>Teachers, attendance & lessons</p><a href="login.html?role=staff">Open Staff</a></div>
-    </div>
-</section>
-
-<!-- 2025 COMPUTER STUDENTS POST -->
-<section class="section" id="computer-2025" style="padding:40px 15px;max-width:1000px;margin:auto">
-  <div class="section-heading" style="text-align:center">
-    <span>OUR STUDENTS</span>
-    <h2>2025 Computer Students</h2>
-    <p>Our proud Computer Students of Nakami Friends Senior School - Class of 2025</p>
-  </div>
-  <div style="background:white;border-radius:16px;overflow:hidden;box-shadow:0 4px 15px rgba(0,0,0,.1);margin-top:20px">
-    <img src="2025-computer-students.jpg" alt="2025 Computer Students - Nakami Friends Senior School" style="width:100%;display:block">
-    <div style="padding:20px;text-align:center">
-      <h3 style="color:#0f3d2e;margin-bottom:8px">2025 Computer Students</h3>
-      <p style="color:#666;font-size:15px;line-height:1.6">
-        Celebrating our hardworking computer students. Learning, growing and building skills for tomorrow.
-        <br>Building Knowledge. Inspiring Excellence.
-      </p>
-      <p style="margin-top:12px">
-        <span style="background:#eef6f1;color:#0f3d2e;padding:6px 14px;border-radius:20px;font-size:13px;font-weight:700">📅 Year: 2025</span>
-        <span style="background:#fff3e0;color:#e67e22;padding:6px 14px;border-radius:20px;font-size:13px;font-weight:700;margin-left:5px">💻 Computer Class</span>
-      </p>
-      <a href="#admissions" style="display:inline-block;margin-top:15px;background:#0f3d2e;color:white;padding:10px 22px;border-radius:8px;text-decoration:none;font-weight:700">Join Us →</a>
-    </div>
-  </div>
-</section>
-
-<section class="section admissions-section" id="admissions">
-    <div class="section-heading">
-        <span>JOIN OUR SCHOOL</span>
-        <h2>Admissions Are Welcome</h2>
-        <p>Begin your application to Nakami Friends Senior School.</p>
-    </div>
-    <div class="admission-box">
-        <div><h3>Become Part of Our Community</h3><p>Interested applicants can submit an online application and track their admission progress.</p></div>
-        <a href="admissions.html" class="btn btn-gold">Apply Online</a>
-    </div>
-</section>
-
-<section class="section facilities-section" id="facilities">
-    <div class="section-heading">
-        <span>SCHOOL ENVIRONMENT</span>
-        <h2>Our Learning Environment</h2>
-        <p>A supportive environment for learning and personal growth.</p>
-    </div>
-    <div class="card-grid">
-        <article class="info-card"><h3>Learning Facilities</h3><p>Facilities that support effective teaching and learning.</p></article>
-        <article class="info-card"><h3>Technology</h3><p>Encouraging digital literacy and innovation.</p></article>
-        <article class="info-card"><h3>Student Life</h3><p>Promoting teamwork, creativity and responsibility.</p></article>
-    </div>
-</section>
-
-<section class="section news-section" id="news">
-    <div class="section-heading"><span>STAY INFORMED</span><h2>Latest School Announcements</h2></div>
-    <div id="publicNews" class="card-grid"><p>School announcements will appear here.</p></div>
-</section>
-
-<section class="section contact-section" id="contact">
-    <div class="section-heading"><span>CONTACT US</span><h2>We Would Love to Hear From You</h2></div>
-    <div class="contact-content">
-        <div><h3>Nakami Friends Senior School</h3><p>Email: Add official school email</p><p>Telephone: Add school telephone</p><p>Location: Add school location</p></div>
-        <div><h3>School Information</h3><p>For admissions and other enquiries, contact the school administration.</p></div>
-    </div>
-</section>
-
-</main>
-
-<footer class="site-footer">
-    <div><strong>NAKAMI FRIENDS SENIOR SCHOOL</strong><p>Building Knowledge. Inspiring Excellence.</p></div>
-    <p>© <span id="year"></span> Nakami Friends Senior School. All rights reserved.</p>
-</footer>
+</div>
 
 <script src="script.js"></script>
 </body>
